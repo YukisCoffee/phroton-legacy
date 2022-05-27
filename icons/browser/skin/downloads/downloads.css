@@ -1,0 +1,364 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+
+/*** Panel and outer controls ***/
+
+#downloadsListBox {
+  background: transparent;
+  color: inherit;
+  -moz-appearance: none;
+  margin: 0;
+}
+
+#emptyDownloads {
+  padding: 16px 16px;
+  margin: 0;
+}
+
+#downloadsListBox > richlistitem > toolbarseparator {
+  margin: 0;
+  border: 0;
+  min-width: 0;
+  border-left: 1px solid var(--panel-separator-color);
+  -moz-appearance: none;
+}
+
+.downloadsPanelFooterButton:hover {
+  outline: 1px solid var(--arrowpanel-dimmed);
+}
+
+.downloadsPanelFooterButton:hover:active,
+.downloadsPanelFooterButton[open="true"] {
+  outline: 1px solid var(--arrowpanel-dimmed-further);
+}
+
+#downloadsPanel:not([keyfocus]) .downloadsPanelFooterButton:-moz-focusring {
+  outline: none;
+}
+
+#downloadsSummary {
+  background: var(--arrowpanel-dimmed);
+  border-top: 1px solid var(--panel-separator-color);
+  /* Reserve the same space as the button and separator in download items. */
+  padding-inline-end: 59px;
+}
+
+#downloadsHistory {
+  padding-inline-start: 14px;
+  padding-inline-end: 14px;
+}
+
+#downloadsListBox > richlistitem > toolbarseparator {
+  margin: 10px 0;
+}
+
+#downloadsListBox > richlistitem:hover > toolbarseparator {
+  margin: 0;
+}
+
+#downloadsSummary {
+  -moz-user-focus: normal;
+}
+
+#downloadsSummary > .downloadTypeIcon {
+  list-style-image: url("chrome://browser/skin/downloads/download-summary.svg");
+}
+
+#downloadsSummaryDescription {
+  color: -moz-nativehyperlinktext;
+}
+
+:root[lwt-popup-brighttext] #downloadsSummaryDescription {
+  color: #75baff; /* --blue-30 */
+}
+
+/*** List items and similar elements in the summary ***/
+
+#downloadsSummary,
+#downloadsListBox > richlistitem {
+  height: var(--downloads-item-height);
+}
+
+#downloadsListBox > richlistitem {
+  border-bottom: 1px solid var(--panel-separator-color);
+  background: transparent;
+  color: inherit;
+}
+
+#downloadsListBox > richlistitem:last-child {
+  border-bottom: none;
+}
+
+.downloadTypeIcon {
+  margin: 8px 13px;
+  width: 32px;
+  height: 32px;
+}
+
+.downloadBlockedBadge {
+  margin: 0 5px;
+  background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
+}
+
+.downloadBlockedBadge:-moz-locale-dir(rtl) {
+  background-position-x: left;
+}
+
+#downloadsListBox > richlistitem[verdict="PotentiallyUnwanted"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/warning.svg");
+}
+
+#downloadsListBox > richlistitem[verdict="Uncommon"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/info.svg");
+}
+
+.downloadContainer {
+  margin-inline-end: 13px;
+}
+
+#downloadsSummaryDescription,
+.downloadTarget {
+  margin: 0;
+}
+
+#downloadsSummaryDetails,
+.downloadDetails {
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
+  opacity: var(--downloads-item-details-opacity);
+  /* Use calc() to keep the height consistent with .downloadTarget, so that the
+     progress bar can be vertically centered. */
+  margin: 4px 0 calc(1em / var(--downloads-item-font-size-factor) - 1em);
+}
+
+/* When hovering the mouse pointer over the item, instead of the normal message
+   we display a more detailed one. */
+#downloadsListBox > richlistitem:hover > .downloadMainArea > .downloadContainer > .downloadDetailsNormal,
+#downloadsListBox > richlistitem:not(:hover) > .downloadMainArea > .downloadContainer > .downloadDetailsHover {
+  display: none;
+}
+
+/* When hovering the action button in particular, instead of the usual hover
+   message we display the command associated with the button. */
+#downloadsListBox > richlistitem.downloadHoveringButton > .downloadMainArea > .downloadContainer > .downloadDetailsHover,
+#downloadsListBox > richlistitem:not(.downloadHoveringButton) > .downloadMainArea > .downloadContainer > .downloadDetailsButtonHover {
+  display: none;
+}
+
+#downloadsListBox > richlistitem[verdict] > toolbarseparator {
+  visibility: hidden;
+}
+
+.downloadButton {
+  -moz-appearance: none;
+  min-width: 58px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: inherit !important /* !important overrides button.css on Mac and Linux */;
+}
+
+.downloadButton > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+.downloadButton > .button-box > .button-text {
+  margin: 0 !important;
+  padding: 0;
+}
+
+#downloadsListBox > richlistitem[state="1"][exists] .downloadMainArea:hover,
+#downloadsListBox > richlistitem:not([verdict]) > .downloadButton:hover,
+#downloadsListBox > richlistitem[verdict]:hover {
+  background-color: var(--arrowpanel-dimmed);
+}
+
+#downloadsListBox > richlistitem[state="1"][exists] > .downloadMainArea:hover:active,
+#downloadsListBox > richlistitem:not([verdict]) > .downloadButton:hover:active,
+#downloadsListBox > richlistitem[verdict]:hover:active {
+  background-color: var(--arrowpanel-dimmed-further);
+}
+
+#downloadsListBox > richlistitem[verdict="Malware"]:hover,
+#downloadsListBox > richlistitem[verdict="Malware"]:hover:active {
+  background-color: #aa1b08;
+  color: white;
+}
+
+/*** Button icons ***/
+
+.downloadIconCancel > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icon-cancel.svg");
+}
+
+.downloadIconShow > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icon-folder.svg");
+}
+
+.downloadIconRetry > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icon-retry.svg");
+}
+
+.downloadIconSubviewArrow > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icon-arrow-right.svg");
+}
+
+.downloadIconSubviewArrow > .button-box > .button-icon:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/panel-icon-arrow-left.svg");
+}
+
+/*** Blocked subview ***/
+
+#downloadsPanel-blockedSubview > .panel-view-body-unscrollable {
+  background-image: url("chrome://browser/skin/warning.svg");
+  background-size: 32px 32px;
+  background-position: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+#downloadsPanel-blockedSubview:-moz-locale-dir(rtl) {
+  background-position: calc(100% - 16px) 16px;
+}
+
+#downloadsPanel-blockedSubview[verdict=Malware] > .panel-view-body-unscrollable {
+  background-image: url("chrome://browser/skin/downloads/download-blocked.svg");
+}
+
+#downloadsPanel-blockedSubview-title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: calc(100% / var(--downloads-item-font-size-factor));
+}
+
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
+  margin-bottom: 16px;
+  opacity: var(--downloads-item-details-opacity);
+}
+
+#downloadsPanel-blockedSubview-title,
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  -moz-margin-start: 64px;
+  -moz-margin-end: 16px;
+}
+
+/*** Progressmeter ***/
+/*** Common-styled progressmeter ***/
+
+/*
+ * Styling "html:progress" is limited by the fact that a number of properties
+ * are intentionally locked at the UA stylesheet level. We have to use a border
+ * instead of an outline because the latter would be drawn over the progress
+ * bar and we cannot change its z-index. This means we have to use a negative
+ * margin, except when the value is zero, and adjust the width calculation for
+ * the indeterminate state.
+ */
+
+.downloadProgress {
+  -moz-appearance: none;
+  display: -moz-box;
+  margin: 4px 0 0;
+  margin-inline-end: 12px;
+  border: 1px solid ButtonShadow;
+  height: 6px;
+  background-color: ButtonFace;
+}
+
+.downloadProgress::-moz-progress-bar {
+  -moz-appearance: none;
+  background-color: Highlight;
+}
+
+.downloadProgress[paused]::-moz-progress-bar {
+  background-color: GrayText;
+}
+
+.downloadProgress:not([value="0"])::-moz-progress-bar {
+  margin: -1px;
+  height: 8px;
+}
+
+.downloadProgress:indeterminate::-moz-progress-bar {
+  width: calc(100% + 2px);
+  /* Make a white reflecting animation.
+     Create a gradient with 2 identical pattern, and enlarge the size to 200%.
+     This allows us to animate background-position with percentage. */
+  background-image: linear-gradient(90deg, transparent 0%,
+                                           rgba(255,255,255,0.5) 25%,
+                                           transparent 50%,
+                                           rgba(255,255,255,0.5) 75%,
+                                           transparent 100%);
+  background-blend-mode: lighten;
+  background-size: 200% 100%;
+  animation: downloadProgressSlideX 1.5s linear infinite;
+}
+
+@keyframes downloadProgressSlideX {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/*** Panel and outer controls ***/
+
+#downloadsSummary:-moz-focusring {
+  outline-offset: -5px;
+}
+
+#downloadsPanel:not([keyfocus]) #downloadsSummary:-moz-focusring {
+  outline: none;
+}
+
+/*** List items and similar elements in the summary ***/
+
+:root {
+  --downloads-item-height: 5.5em;
+  --downloads-item-font-size-factor: 0.9;
+  --downloads-item-details-opacity: 0.6;
+}
+
+#downloadsPanel:not([keyfocus]) .downloadButton:-moz-focusring {
+  outline: none;
+}
+
+@media (-moz-windows-default-theme) {
+  #downloadsListBox > richlistitem[verdict="Malware"]:not(:hover) {
+    color: #aa1b08;
+  }
+
+  :root[lwt-popup-brighttext] #downloadsListBox > richlistitem[verdict="Malware"]:not(:hover) {
+    color: #ff0039;
+  }
+
+  /* Use unified color for the progressbar on default theme */
+  .downloadProgress::-moz-progress-bar {
+    background-color: #3c9af8;
+  }
+
+  .downloadProgress[paused]::-moz-progress-bar {
+    background-color: #a6a6a6;
+  }
+}
+
+/*** Highlighted list items ***/
+
+#downloadsPanel[keyfocus] #downloadsListBox:focus > #downloadsListBox > richlistitem[selected] {
+  outline: 1px -moz-dialogtext dotted;
+  outline-offset: -1px;
+}

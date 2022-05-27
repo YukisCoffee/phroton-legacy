@@ -1,0 +1,147 @@
+.titlebar-spacer[type="pre-tabs"], .titlebar-spacer[type="post-tabs"] {
+
+    width: 40px!important;
+
+}
+
+.titlebar-spacer[type="pre-tabs"] {
+
+    border-inline-end: 1px solid var(--lwt-background-tab-separator-color, currentColor);
+    opacity: 0.2;
+
+}
+
+#TabsToolbar tab .tab-background {
+    box-shadow: none!important;
+}
+
+:root:not([uidensity="compact"]):not([chromehidden~="toolbar"]) #PanelUI-button
+{
+    margin-inline-start: 3px;
+    border-inline-start: 1px solid;
+
+    border-image: linear-gradient(
+        transparent 4px, 
+        var(
+            --lwt-toolbar-vertical-separator, rgba(0,0,0,.1)
+        ) 4px, 
+        var(
+            --lwt-toolbar-vertical-separator, rgba(0,0,0,.1)
+        ) calc(100% - 4px),
+        transparent calc(100% - 4px)
+    );
+
+    border-image-slice: 1;
+}
+:root:not([uidensity="compact"]) #PanelUI-button
+{
+    padding-inline-start: 5px;
+}
+:root:not([uidensity="compact"]):not([chromehidden~="toolbar"]) #nav-bar[brighttext] > #PanelUI-button 
+{
+    border-image-source: linear-gradient(transparent 4px, 
+        var(
+            --lwt-toolbar-vertical-separator, rgba(255,255,255,.2)
+        ) 4px, 
+        var(
+            --lwt-toolbar-vertical-separator, rgba(255,255,255,.2)
+        ) calc(100% - 4px), 
+        transparent calc(100% - 4px) 
+    );
+}
+
+#PanelUI-menu-button
+{
+    padding-inline-end: 5px !important;
+}
+
+:root[sizemode="normal"][tabsintitlebar]:-moz-window-inactive
+{
+   border-top-color: rgba(0,0,0,.3) !important;
+}
+
+:root[sizemode="normal"][tabsintitlebar]
+{
+    border-top: 1px solid var(--chrome-content-separator-color);
+}
+
+:root[sizemode="normal"][tabsintitlebar]
+{
+    border-top: 1px solid var(--chrome-content-separator-color);
+}
+
+:root
+{
+    --toolbarbutton-hover-transition-duration: 150ms !important;
+    --toolbarbutton-outer-padding: 2px !important;
+    --toolbarbutton-inner-padding: 6px !important;
+    --toolbarbutton-focus-outline: 2px solid currentColor !important;
+    --backbutton-background: hsla(0,100%,100%,.8) !important;
+    --backbutton-hover-background: var(--backbutton-background) !important;
+    --backbutton-active-background: var(--toolbarbutton-active-background) !important;
+    --backbutton-border-color: hsla(240,5%,5%,.3) !important;
+    --toolbarbutton-height: 0 !important;
+}
+
+:root
+{
+    --toolbar-non-lwt-bgcolor: -moz-dialog !important;
+    --toolbar-non-lwt-textcolor: -moz-dialogtext !important;
+    --toolbar-non-lwt-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)) !important;
+    --toolbarbutton-vertical-text-padding: calc(var(--toolbarbutton-inner-padding) - 1px) !important;
+    --toolbarbutton-border-radius: 2px !important;
+    --toolbarbutton-icon-fill-opacity: 1 !important;
+    --arrowpanel-dimmed: hsla(0,0%,80%,.35) !important;
+    --arrowpanel-dimmed-further: hsla(0,0%,80%,.5) !important;
+    --arrowpanel-dimmed-even-further: hsla(0,0%,80%,.8) !important;
+    --urlbar-separator-color: ThreeDLightShadow !important;
+}
+
+:root
+{
+    --panel-disabled-color: rgba(12, 12, 13, 0.5);
+    --lwt-accent-color: rgb(227, 228, 230);
+    --lwt-text-color: rgba(24, 25, 26);
+    --arrowpanel-background: rgb(255, 255, 255);
+    --arrowpanel-color: rgba(12, 12, 13, 1);
+    --arrowpanel-border-color: rgb(204, 204, 204);
+    --toolbar-bgcolor: rgb(245, 246, 247);
+    --lwt-toolbarbutton-icon-fill: rgba(24, 25, 26, 0.7);
+    --autocomplete-popup-background: rgb(255, 255, 255);
+    --autocomplete-popup-color: rgb(12, 12, 13);
+}
+
+.toolbarbutton-icon
+{
+    border-radius: var(--toolbarbutton-border-radius) !important;
+}
+
+#tabs-newtab-button .toolbarbutton-icon
+{
+    display: -moz-box;
+    padding: var(--toolbarbutton-inner-padding) !important;
+}
+
+:root
+{
+    --tabs-navbar-shadow-size: 0 !important;
+}
+
+#TabsToolbar .toolbarbutton-1
+{
+    margin: 0 !important;
+}
+
+tabs[overflow="true"] + #new-tab-button .toolbarbutton-icon
+{
+    display: -moz-box;
+    padding: var(--toolbarbutton-inner-padding) !important;
+}
+
+#scrollbutton-up, #scrollbutton-down
+{
+    list-style-image: url(./icons/global/skin/icons/arrow-left.svg) !important;
+    padding: 0 6px !important;
+    border: none !important;
+    border-radius: 0 !important;
+}

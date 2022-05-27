@@ -1,0 +1,24 @@
+/**
+ * //
+ * // DEFAULT LIGHT THEME OVERRIDE
+ * //
+ */
+/** This selector is required for new Firefox since December 2021 */
+:root[style*="--button-bgcolor: rgba(207, 207, 216, 0.33000001311302185);"]
+{
+  --override-backbutton-background: hsla(0,100%,100%,.8);
+  --override-backbutton-background-hover: hsla(0,100%,100%,.8);
+  --toolbar-field-background-color: rgb(255, 255, 255) !important;
+  --toolbar-field-border-color: rgb(204, 204, 204) !important;
+  --toolbar-field-focus: rgba(255, 255, 255, 1) !important;
+  /** Hack for cross-compatibility with FF91 and FF100 */
+  --lwt-toolbar-field-background-color: var(--toolbar-field-background-color) !important;
+  --lwt-toolbar-field-border-color: var(--toolbar-field-border-color) !important;
+  --lwt-toolbar-field-focus: var(--toolbar-field-focus) !important;
+}
+
+/** Tab line colour override for FF100 */
+:root[style*="--button-bgcolor: rgba(207, 207, 216, 0.33000001311302185);"] .tab-context-line
+{
+  --lwt-tab-line-color: var(--tab-loading-fill,  rgb(10, 132, 255)) !important;
+}

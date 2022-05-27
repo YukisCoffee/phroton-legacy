@@ -1,0 +1,132 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Sidebars */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.sidebar-panel {
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+/* Themed sidebars */
+
+.sidebar-panel[lwt-sidebar] {
+  background-color: var(--lwt-sidebar-background-color);
+  color: var(--lwt-sidebar-text-color);
+  scrollbar-color: rgba(204,204,204,.5) rgba(230,230,235,.5);
+}
+
+.sidebar-panel[lwt-sidebar-brighttext] {
+  scrollbar-color: rgba(249,249,250,.4) rgba(20,20,25,.3);
+}
+
+.sidebar-panel[lwt-sidebar] .sidebar-placesTreechildren::-moz-tree-row(selected) {
+  background-color: hsla(0,0%,80%,.3);
+}
+
+.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-row(selected) {
+  background-color: rgba(249,249,250,.1);
+}
+
+.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-image(selected),
+.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(selected),
+.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-cell-text(selected) {
+  color: var(--lwt-sidebar-text-color);
+}
+
+.sidebar-panel[lwt-sidebar-highlight] .sidebar-placesTreechildren::-moz-tree-row(selected,focus) {
+  background-color: var(--lwt-sidebar-highlight-background-color);
+}
+
+.sidebar-panel[lwt-sidebar-highlight] .sidebar-placesTreechildren::-moz-tree-image(selected, focus),
+.sidebar-panel[lwt-sidebar-highlight] .sidebar-placesTreechildren::-moz-tree-twisty(selected, focus),
+.sidebar-panel[lwt-sidebar-highlight] .sidebar-placesTreechildren::-moz-tree-cell-text(selected, focus) {
+  color: var(--lwt-sidebar-highlight-text-color);
+}
+
+/* Sidebar tree */
+
+.sidebar-placesTree {
+  -moz-appearance: none;
+  background-color: transparent;
+  color: inherit;
+  border: 0;
+  margin: 0;
+}
+
+/* View button */
+
+#viewButton {
+  -moz-appearance: none;
+  border-radius: 4px;
+  padding: 2px 4px;
+  color: inherit;
+}
+
+#viewButton:hover {
+  background-color: hsla(240, 5%, 5%, .1);
+}
+
+#viewButton[open] {
+  background-color: hsla(240, 5%, 5%, .15);
+}
+
+#viewButton > .button-box > .button-menu-dropmarker {
+  -moz-appearance: none !important;
+  display: -moz-box;
+  list-style-image: url("chrome://global/skin/icons/arrow-dropdown-12.svg");
+  width: 12px;
+  height: 12px;
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+:root[uidensity=touch] #search-box,
+:root[uidensity=touch] .sidebar-placesTreechildren::-moz-tree-row {
+  min-height: 32px;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell,
+.sidebar-placesTreechildren::-moz-tree-twisty {
+  padding: 0 4px;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell(leaf) ,
+.sidebar-placesTreechildren::-moz-tree-image(leaf) {
+  cursor: pointer;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell(separator) {
+  cursor: default;
+}
+
+@media (-moz-windows-default-theme) {
+  .sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
+    text-decoration: none;
+  }
+}
+
+/* Default button vert. margins are 1px/2px, and this can cause misalignment */
+#viewButton {
+  margin: 0;
+  margin-inline-start: 4px;
+  border-radius: 2px;
+}
+
+#sidebar-search-container {
+  padding: 8px;
+}
+
+#search-box {
+  margin: 0;
+}

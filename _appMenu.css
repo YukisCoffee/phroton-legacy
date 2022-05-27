@@ -1,0 +1,237 @@
+/**
+ * //
+ * // APP MENU
+ * //
+ * (that is the hamburger menu at the right under the close button)
+ */
+:root
+{
+  --arrowpanel-border-radius: 0 !important;
+}
+
+/** 
+ * BUG (kirasicecreamm) Panel arrow does not exist on
+ * at least Firefox 100, but it does on Firefox 91.
+ * This behaves differently between browsers at the
+ * moment (fix? pseudoelements went really poorly...)
+ */
+.panel-arrow
+{
+  display: -moz-box !important;
+}
+
+
+.subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
+    -moz-appearance: none;
+    margin: 0 !important;
+    min-height: 24px !important;
+    padding: 4px 12px !important;
+    background-color: transparent;
+}
+
+/** Back button overrides */
+toolbarbutton.subviewbutton-back
+{
+  padding: 12px 12px !important;
+}
+
+.panel-header
+{
+  padding: 0 !important;
+}
+
+.subviewbutton > .toolbarbutton-icon
+{
+  /** Force padding */
+  width: 16px;
+  height: 16px;
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+.PanelUI-subView toolbarseparator
+{
+    margin: 6px 0 !important;
+    border-top: 1px solid var(--panel-separator-color);
+}
+/** Remove sign in ad (annoying and I don't want to style it) */
+#appMenu-fxa-status2, #appMenu-fxa-separator
+{
+  display: none !important;
+}
+
+/* Order */
+#appMenu-new-tab-button2, #appMenu-new-window-button2,
+#appMenu-new-private-window-button2,
+#appMenu-new-private-window-button2 + toolbarseparator
+{
+  -moz-box-ordinal-group: 0;
+}
+
+/** Zoom */
+#appMenu-zoom-controls2, #appMenu-zoom-controls2 + toolbarseparator
+{
+  -moz-box-ordinal-group: 0;
+}
+
+#appMenu-zoom-controls2::after
+{
+  content: " ";
+  position: relative;
+  display: -moz-box;
+  border-inline-start: 1px solid var(--panel-separator-color);
+  border-top: none;
+  height: 24px;
+  margin-inline-start: 6px;
+  margin-inline-end: 7px;
+  -moz-box-ordinal-group: 1;
+}
+
+#appMenu-zoom-controls2::before,
+#appMenu-zoom-controls2 .toolbarbutton-text,
+#appMenu-zoomReduce-button2,
+#appMenu-zoomReset-button2,
+#appMenu-zoomEnlarge-button2
+{
+  -moz-box-ordinal-group: 0;
+}
+
+#appMenu-zoomReduce-button2, #appMenu-zoomEnlarge-button2, #appMenu-fullscreen-button2
+{
+   padding: 4px 5px !important;
+}
+
+#appMenu-zoomReduce-button2 {
+    list-style-image: url(./icons/browser/skin/zoom-out.svg) !important;
+}
+
+#appMenu-zoomEnlarge-button2 {
+    list-style-image: url(./icons/browser/skin/zoom-in.svg) !important;
+}
+
+#appMenu-fullscreen-button2 {
+    list-style-image: url(./icons/browser/skin/fullscreen.svg) !important;
+    -moz-box-ordinal-group: 2;
+}
+
+#appMenu-fullscreen-button2 .toolbarbutton-icon
+{
+  padding: 0 !important;
+  background: none !important;
+}
+
+#appMenu-zoomReduce-button2:hover, #appMenu-zoomEnlarge-button2:hover, #appMenu-fullscreen-button2:hover
+{
+   background-color: var(--arrowpanel-dimmed) !important;
+}
+
+.subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1
+{
+  border-radius: 0 !important;
+}
+
+#appMenu-zoomReset-button2
+{
+  min-height: unset !important;
+  border: 1px solid var(--panel-separator-color) !important;
+  border-radius: 10000px !important;
+  padding: 1px 8px !important;
+  background-color: var(--arrowpanel-dimmed) !important;
+  margin: 0 10px !important;
+}
+
+#appMenu-zoomReset-button2:hover
+{
+  background-color: var(--arrowpanel-dimmed-further) !important;
+}
+
+#appMenu-zoomReset-button2 .toolbarbutton-text
+{
+  padding-inline-start: 0 !important;
+  background-color: transparent !important;
+}
+
+/** Arrow icon */
+.PanelUI-subView .subviewbutton-nav::after
+{
+  content: url(./icons/browser/skin/back-12.svg) !important;
+  transform: scaleX(-1) translateY(1px) !important;
+}
+
+/** Apps menu icons */
+#appMenu-new-window-button2 {
+  list-style-image: url(./icons/browser/skin/new-window.svg);
+}
+
+#appMenu-new-private-window-button2 {
+  list-style-image: url(./icons/browser/skin/privateBrowsing.svg);
+}
+
+#appMenu-bookmarks-button{
+  list-style-image: url(./icons/browser/skin/bookmark.svg);
+}
+
+#appMenu-history-button {
+  list-style-image: url(./icons/browser/skin/history.svg);
+}
+
+#appMenu-downloads-button {
+  list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow-with-bar");
+}
+
+#appMenu-passwords-button {
+  list-style-image: url(./icons/browser/skin/login.svg);
+}
+
+#appMenu-extensions-themes-button {
+  list-style-image: url(./icons/extensionGeneric-16.svg);
+}
+
+#appMenu-print-button2 {
+  list-style-image: url(./icons/global/skin/icons/print.svg);
+}
+
+#appMenu-find-button2 {
+  list-style-image: url(./icons/global/skin/icons/search-glass.svg);
+}
+
+#appMenu-settings-button {
+  list-style-image: url(./icons/global/skin/icons/settings.svg);
+}
+
+#appMenu-more-button2 {
+  list-style-image: url(./icons/browser/skin/ion.svg);
+}
+
+#appMenu-help-button2 {
+  list-style-image: url("./icons/global/skin/icons/help.svg");
+}
+
+#appMenu-quit-button2 {
+  list-style-image: url(./icons/browser/skin/quit.svg);
+}
+
+/** Fake separator before settings (looks better) */
+#appMenu-find-button2 
+{
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid var(--panel-separator-color);
+}
+#appMenu-settings-button
+{
+  margin-top: 6px !important;
+}
+
+#appMenu-find-button2:hover
+{
+  padding-bottom: 4px !important;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 5px !important;
+}
+
+#appMenu-find-button2:hover ~ #appMenu-settings-button
+{
+  border-top: 1px solid var(--panel-separator-color);
+  padding-top: 10px !important;
+  margin-top: 0px !important;
+}

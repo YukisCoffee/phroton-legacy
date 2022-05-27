@@ -1,0 +1,89 @@
+:root 
+{
+    --backbutton-background: hsla(0,100%,100%,.8);
+
+    --backbutton-hover-background: var(--backbutton-background);
+
+    --backbutton-active-background: var(--toolbarbutton-active-background);
+
+    --backbutton-border-color: hsla(240,5%,5%,.3);
+}
+
+#navigator-toolbox 
+{
+    --tabs-border-color: rgba(0,0,0,.3) !important;
+}
+#navigator-toolbox:-moz-lwtheme 
+{
+    --tabs-border-color: rgba(0,0,0,.3) !important;
+}
+
+#nav-bar
+{
+    box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--tabs-border-color) !important;;
+}
+
+#nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child, 
+#nav-bar-customization-target > toolbarpaletteitem:first-child > :is(toolbarbutton, toolbaritem)
+{
+    padding-inline-start: 0 !important;
+}
+
+#nav-bar-customization-target :where(#reload-button, #stop-button) > .toolbarbutton-icon
+{
+    padding: var(--toolbarbutton-inner-padding) !important;
+}
+
+toolbar .toolbarbutton-1 > .toolbarbutton-icon
+{
+    width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+    height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+}
+
+/**
+ * //
+ * // NAVIGATION ITEMS
+ * //
+ */
+/** 
+ * Uses #main-window instead of :root to avoid selecting
+ * the back button on the library popup/etc.
+ */
+#main-window:not([uidensity="compact"]) #back-button 
+{
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-inline-start: 3px !important;
+    padding-inline-end: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    border-radius: 0 10000px 10000px 0 !important;
+}
+
+#main-window:not([uidensity="compact"]) #back-button > .toolbarbutton-icon
+{
+    background-color: var(--override-backbutton-background, var(--toolbarbutton-hover-background)) !important;
+    background-origin: padding-box !important;
+    background-clip: padding-box !important;
+    border: 1px solid var(--backbutton-border-color) !important;
+    border-radius: 10000px!important;
+    width: 34px !important;
+    height: 34px !important;
+    padding: 8px !important;
+    transition-property: box-shadow !important;
+    transition-duration: var(--toolbarbutton-hover-transition-duration) !important;
+}
+
+#main-window:not([uidensity="compact"]) #back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon 
+{
+
+    background-color: var(--override-backbutton-background-hover, var(--toolbarbutton-active-background)) !important;
+    box-shadow: 0 1px 6px hsla(0,0%,0%,.1);
+    border-color: hsla(240,5%,5%,.35);
+}
+
+#main-window:not([uidensity="compact"]) #back-button[open] > .toolbarbutton-icon, :root:not([uidensity="compact"]) #back-button:not([disabled]):hover:active > .toolbarbutton-icon 
+{
+    background-color: var(--backbutton-active-background) !important;
+    border-color: hsla(240,5%,5%,.40);
+}

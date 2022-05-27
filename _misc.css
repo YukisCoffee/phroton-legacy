@@ -1,0 +1,19 @@
+/**
+ * Bug fix: Import bookmarks button on bookmarks bar
+ * is too large, rescales the rest of the bar
+ * (Also applies to other toolbar items)
+ */
+#PersonalToolbar toolbarbutton image
+{
+   width: 16px !important;
+   height: 16px !important;
+}
+
+/** 
+ * TEMP: Remove blue enhanced tracking protection menu arrow 
+ * (will be reinstated when menus are reworked)
+ */
+.panel-arrow
+{
+   fill: var(--arrowpanel-background) !important;
+}

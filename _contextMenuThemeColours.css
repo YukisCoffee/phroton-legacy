@@ -1,0 +1,8 @@
+menupopup
+{
+   --menuitem-hover-background-color: var(--button-hover-bgcolor) !important;
+   --menu-background-color: var(--arrowpanel-background) !important;
+   --menu-color: var(--arrowpanel-color) !important;
+   --menuitem-disabled-hover-background-color: var(--arrowpanel-background) !important;
+   --menu-border-color: var(--panel-separator-color) !important;
+}

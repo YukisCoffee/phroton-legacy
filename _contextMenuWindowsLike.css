@@ -1,0 +1,44 @@
+.menu-text, menu > .menu-text
+{
+   padding-inline-start: 24px !important;
+}
+
+menupopup > menuitem, menupopup > menu
+{
+   padding-inline-start: 4px !important;
+}
+
+menuseparator
+{
+   margin-left: 28px !important;
+   margin-right: 0 !important;
+}
+
+.menu-iconic-left, menuitem[type="checkbox"], menuitem[type="radio"]
+{
+   min-width: 16px !important;
+   margin-inline-end: 8px;
+}
+
+#context-sep-navigation,.
+{
+   margin-left: 0 !important;
+}
+
+menupopup
+{
+   border-radius: 0 !important;
+   --panel-border-radius: 0 !important;
+   --panel-padding: 2px 2px 3px !important;
+}
+
+menuitem
+{
+   padding-inline-start: 5px !important;
+}
+
+:root:not([uidensity=touch]) menupopup > menuitem, menupopup > menu
+{
+   padding-block-start: 2px !important;
+   padding-block-end: 2px !important;
+}

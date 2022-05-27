@@ -1,0 +1,201 @@
+/**
+ * //
+ * // TABS HEIGHT
+ * //
+ */
+#TabsToolbar
+{
+  height: 33px;
+}
+
+[uidensity="compact"] .tabbrowser-tab
+{
+  height: 29px !important;
+}
+
+[uidensity="compact"] #TabsToolbar
+{
+  height: 31px;
+}
+
+[uidensity="touch"] #TabsToolbar
+{
+  height: 41px;
+}
+
+/** Fake tab line colour if transparent set by the theme */
+#tabbrowser-tabs[style*="--lwt-tab-line-color: rgba(0, 0, 0, 0)"] .tab-context-line
+{
+  --lwt-tab-line-color: color-mix(in srgb, var(--button-primary-bgcolor) 80%, transparent);
+}
+
+
+/**
+ * //
+ * // TAB ICONS
+ * //
+ */
+.tabbrowser-tab[image] .tab-label-container, .tabbrowser-tab[pendingicon] .tab-label-container, 
+.tabbrowser-tab[busy] .tab-label-container{
+  margin-left: 21.5px;
+}
+
+.tab-icon-stack {
+  position: absolute;
+  min-height: 22px; /* this seems to fix throbber positioning issues */
+  bottom: 5px;
+  width: calc(100% - 6px - 48px);
+}
+
+[uidensity="compact"] .tab-icon-stack
+{
+  bottom: 4px;
+}
+
+[uidensity="touch"] .tab-icon-stack
+{
+  bottom: 9px;
+}
+
+/** 
+ * When there are an overflow of tabs and the close button is meant to be hidden, reposition
+ * the icon stack to account for its disappearance.
+ *
+ * This should not apply to the active tab, however.
+ */
+tabs[closebuttons^="activetab"] tab:not([visuallyselected]) .tab-icon-stack {
+  width: calc(100% - 32px);
+}
+
+.tab-icon-stack .tab-icon-overlay {
+  position: relative;
+  left: 100%;
+  margin-top: 6px;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 4px !important;
+  padding: 0!important;
+}
+
+.tab-icon-overlay[pictureinpicture]:not(:hover), 
+.tab-icon-overlay[soundplaying]:not(:hover), 
+.tab-icon-overlay[muted]:not(:hover), 
+.tab-icon-overlay[activemedia-blocked]:not(:hover)
+{
+  opacity: 0.8 !important;
+}
+.tab-icon-overlay:not([crashed])[soundplaying]:hover, .tab-icon-overlay:not([crashed])[muted]:hover, .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
+  color: inherit !important;
+  stroke: inherit !important;
+  background-color: transparent !important;
+  fill-opacity: 0.95 !important;
+}
+.tab-icon-overlay[soundplaying] {
+    list-style-image: url("./icons/browser/skin/tabbrowser/tab-audio-playing.svg") !important;
+}
+.tab-icon-overlay[activemedia-blocked] {
+    list-style-image: url("./icons/browser/skin/tabbrowser/tab-audio-blocked.svg") !important;
+}
+.tab-icon-overlay[muted] {
+    list-style-image: url("./icons/browser/skin/tabbrowser/tab-audio-muted.svg") !important;
+}
+.tabbrowser-tab[muted] .tab-label-container, 
+.tabbrowser-tab[soundplaying] .tab-label-container, 
+.tabbrowser-tab[activemedia-blocked] .tab-label-container {
+  margin-right: 20px;
+}
+
+
+
+.tab-content {
+
+    padding: 0 9px !important;
+
+}
+
+.tab-close-button {
+  padding: unset !important;;
+}
+.close-icon {
+  list-style-image: url(./icons/global/skin/icons/close2.svg) !important;
+  color: inherit !important;
+  fill: currentColor;
+  width: 20px !important;
+  height: auto !important;
+}
+
+/**
+ * Pinned tabs should only show the icon.
+ * Icon stack, i.e. playing/muted icons should appear
+ * in a floating bubble to the top right of the icon.
+ * The close button never appears.
+ */
+.tabbrowser-tab[pinned] .tab-icon-overlay[muted] {
+    list-style-image: url("./icons/browser/skin/tabbrowser/tab-audio-muted-small.svg") !important;
+}
+.tabbrowser-tab[pinned] .tab-icon-overlay[soundplaying] {
+    list-style-image: url("./icons/browser/skin/tabbrowser/tab-audio-playing-small.svg") !important;
+}
+.tabbrowser-tab[pinned] .tab-icon-overlay[activemedia-blocked] {
+    list-style-image: url("./icons/browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important;
+}
+
+.tabbrowser-tab[pinned] .tab-icon-overlay
+{
+   all: revert;
+  border-radius: 10px !important;
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+.tabbrowser-tab[pinned] .tab-icon-overlay:hover
+{
+  background-color: white !important;
+  fill: black !important;
+}
+
+.tabbrowser-tab[pinned][visuallyselected] .tab-close-button
+{
+  display: none !important;
+}
+
+.tabbrowser-tab[pinned][visuallyselected]:not([busy]) .tab-icon-image
+{
+  display: block !important;
+}
+
+.tabbrowser-tab[pinned][visuallyselected][busy] .tab-throbber
+{
+  display: block !important;
+}
+
+.tabbrowser-tab[pinned] .tab-label-container
+{
+  display: none !important;
+}
+
+tabs .tabbrowser-tab[pinned] .tab-icon-stack,
+.tabbrowser-tab[pinned][visuallyselected]:not([busy]) .tab-icon-stack
+{
+  width: 100% !important;
+  position: relative !important;
+}
+
+/** Scale should be 12px padding not compact, 9px compact */
+.tab-content[pinned] {
+    padding: 0 9px !important;
+}
+:root:not([uidensity="compact"]) .tab-content[pinned] {
+    padding: 0 12px !important;
+}
+
+/* new tabs patch ff 95ish */
+.tab-background {
+  border: 0 !important;
+}
+
+
+
+.tab-throbber {
+  height: inherit!important; /* this seems to fix positioning issues, at what cost? */
+}

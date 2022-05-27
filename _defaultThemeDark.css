@@ -1,0 +1,28 @@
+/**
+ * //
+ * // DEFAULT DARK THEME OVERRIDE
+ * //
+ */
+/** This selector is required for new Firefox since December 2021 */
+:root[style*="--lwt-accent-color: rgb(28, 27, 34);"]
+{
+  --override-backbutton-background: var(--toolbarbutton-hover-background);
+  --override-backbutton-background-hover: var(--toolbarbutton-active-background);
+  --backbutton-border-color: hsla(240,5%,5%,.3) !important;
+  --toolbar-field-background-color: rgb(71, 71, 73) !important;
+  --toolbar-field-border-color: rgba(249, 249, 250, 0.2) !important;
+  --toolbar-field-focus: rgba(71, 71, 73, 1) !important;
+  --toolbar-bgcolor: rgb(50, 50, 52) !important;
+  --lwt-accent-color: rgb(12, 12, 13) !important;
+  --toolbarbutton-icon-fill: rgba(249, 249, 250, 0.7) !important;
+  /** Hack for cross-compatibility with FF91 and FF100 */
+  --lwt-toolbar-field-background-color: var(--toolbar-field-background-color) !important;
+  --lwt-toolbar-field-border-color: var(--toolbar-field-border-color) !important;
+  --lwt-toolbar-field-focus: var(--toolbar-field-focus) !important;
+}
+
+/** Tab line colour override for FF100 */
+:root[style*="--lwt-accent-color: rgb(28, 27, 34);"] .tab-context-line
+{
+  --lwt-tab-line-color: var(--tab-loading-fill,  rgb(10, 132, 255)) !important;
+}

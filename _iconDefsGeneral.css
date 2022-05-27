@@ -1,0 +1,163 @@
+.private-browsing-indicator {
+  background-image: url("./icons/browser/skin/private-browsing.svg") !important;
+}
+
+#back-button, #context-back {
+    list-style-image: url("./icons/browser/skin/back.svg") !important;
+}
+#forward-button, #context-forward {
+    list-style-image: url("./icons/browser/skin/forward.svg") !important;
+}
+#urlbar-go-button {
+    list-style-image: url("./icons/browser/skin/forward.svg") !important;
+}
+#reload-button, #context-reload {
+    list-style-image: url("./icons/global/skin/icons/reload.svg") !important;
+}
+#stop-button, #context-stop {
+    list-style-image: url("./icons/global/skin/icons/stop.svg") !important;
+}
+
+/**
+ * SPECIAL CASE: Stop-reload animation.
+ * This is its own unique code
+ */
+@keyframes reload-to-stop-old {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-450px);
+  }
+}
+
+@keyframes stop-to-reload-old {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-450px);
+  }
+}
+
+#stop-reload-button[animate] > #reload-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image
+{
+    background-image: url("./icons/browser/skin/reload-to-stop.svg") !important;
+    width: 468px !important;
+    animation-name: reload-to-stop-old !important;
+    animation-timing-function: steps(25) !important;
+    animation-duration: 417ms !important; 
+}
+
+
+#stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image
+{
+    background-image: url("./icons/browser/skin/stop-to-reload.svg") !important;
+    animation-timing-function: steps(25) !important;
+    animation-duration: 417ms !important; 
+    width: 468px !important;
+}
+
+#stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image
+{
+  animation-name: stop-to-reload-old !important;
+}
+
+#home-button {
+    list-style-image: url("./icons/browser/skin/home.svg") !important;
+}
+#pageAction-panel-bookmark, #star-button, #context-bookmarkpage {
+    list-style-image: url("./icons/browser/skin/bookmark-hollow.svg") !important;
+}
+#pageAction-panel-bookmark, #star-button[starred], #context-bookmarkpage[starred=true] {
+    list-style-image: url("./icons/browser/skin/bookmark.svg") !important;
+    fill-opacity: 1 !important;
+    fill: var(--toolbarbutton-icon-fill-attention) !important;
+}
+#save-to-pocket-button {
+    list-style-image: url("./icons/browser/skin/pocket-outline.svg") !important;
+    fill: var(--toolbarbutton-icon-fill);
+}
+#library-button {
+    list-style-image: url("./icons/browser/skin/library.svg") !important;
+}
+#sidebar-button:-moz-locale-dir(ltr):not([positionend]), #sidebar-button:-moz-locale-dir(rtl)[positionend] {
+    list-style-image: url("./icons/browser/skin/sidebars.svg") !important;
+}
+#PanelUI-menu-button {
+    list-style-image: url("./icons/browser/skin/menu.svg") !important;
+}
+#tabs-newtab-button, #TabsToolbar #new-tab-button {
+    list-style-image: url("./icons/browser/skin/add.svg") !important;
+}
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
+    list-style-image: url(./icons/browser/skin/connection-secure.svg) !important;
+}
+#identity-icon {
+    margin-inline-start: 0;
+    list-style-image: url(./icons/browser/skin/identity-icon.svg) !important;
+}
+#urlbar:not(.searchButton) > #urlbar-input-container > #identity-box[pageproxystate="invalid"] #identity-icon {
+  list-style-image: url(./icons/browser/skin/search-glass.svg) !important;
+  fill-opacity: .4;
+}
+#urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
+    list-style-image: url(./icons/browser/skin/tracking-protection.svg) !important;
+}
+#downloads-indicator-anchor {
+    min-width: 16px;
+    min-height: 16px;
+    -moz-context-properties: fill, fill-opacity;
+    list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow-with-bar") !important;
+}
+#downloads-button, 
+#appMenu-library-downloads-button 
+{
+    list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow-with-bar") !important;
+}
+
+.bookmark-item {
+  list-style-image: url("chrome://global/skin/icons/defaultFavicon.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+toolbarbutton.bookmark-item {
+  -moz-context-properties: fill, fill-opacity;
+  fill: var(--toolbarbutton-icon-fill);
+  fill-opacity: var(--toolbarbutton-icon-fill-opacity);
+}
+
+.bookmark-item[container] {
+  list-style-image: url("./icons/global/skin/icons/folder.svg") !important;
+}
+
+.bookmark-item[container][query] {
+  list-style-image: url("./icons/browser/skin/places/folder-smart.svg") !important;
+}
+
+.bookmark-item[query][tagContainer] {
+  list-style-image: url("./icons/browser/skin/places/tag.svg") !important;
+  -moz-image-region: auto;
+}
+
+.bookmark-item[query][dayContainer] {
+  list-style-image: url("./icons/browser/skin/history.svg") !important;
+  -moz-image-region: auto;
+}
+
+.bookmark-item[query][hostContainer] {
+  list-style-image: url("./icons/global/skin/icons/folder.svg") !important;
+}
+
+#whats-new-menu-button {
+  list-style-image: url("./icons/browser/skin/whatsnew.svg") !important;
+}
+
+#ion-button {
+  list-style-image: url("chrome://browser/skin/ion.svg");
+}
+
+#import-button {
+  list-style-image: url("chrome://browser/skin/import.svg");
+}
