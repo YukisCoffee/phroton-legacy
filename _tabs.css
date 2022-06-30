@@ -192,6 +192,7 @@ tabs .tabbrowser-tab[pinned] .tab-icon-stack,
 /* new tabs patch ff 95ish */
 .tab-background {
   border: 0 !important;
+  outline: 0 !important;
 }
 
 
