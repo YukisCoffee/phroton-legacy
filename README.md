@@ -1,5 +1,5 @@
-In order for icons to display properly, you must enable `svg.context-properties.context.enabled`
-in about:config.
+In order for icons to display properly, you must enable `svg.context-properties.content.enabled`
+in about:config. (This is the case on FF91, but it doesn't seem to be so true around FF102)
 
 # Known issues
 
