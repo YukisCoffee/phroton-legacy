@@ -17,3 +17,11 @@
 {
    fill: var(--arrowpanel-background) !important;
 }
+
+/*
+ * Disable new "all tabs" button.
+ */
+#alltabs-button
+{
+   display: none !important;
+}
