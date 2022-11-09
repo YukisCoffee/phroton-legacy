@@ -161,3 +161,7 @@ toolbarbutton.bookmark-item {
 #import-button {
   list-style-image: url("chrome://browser/skin/import.svg");
 }
+
+.downloadIconShow > .button-box > .button-icon {
+    list-style-image: url("./icons/browser/skin/panel-icon-folder.svg") !important;
+}
