@@ -108,7 +108,7 @@
     min-width: 16px;
     min-height: 16px;
     -moz-context-properties: fill, fill-opacity;
-    list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow-with-bar") !important;
+    list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow-with-bar");
 }
 #downloads-button, 
 #appMenu-library-downloads-button 

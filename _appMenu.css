@@ -24,8 +24,8 @@
 .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
     -moz-appearance: none;
     margin: 0 !important;
-    min-height: 24px !important;
-    padding: 4px 12px !important;
+    min-height: 24px;
+    padding: 4px 12px;
     background-color: transparent;
 }
 

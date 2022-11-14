@@ -16,6 +16,8 @@
 @import url("_urlBox.css");
 @import url("_appMenu.css");
 @import url("_placesPopup.css");
+@import url("_downloads.css");
+@import url("_downloads_percent_hack.css");
 @import url("_misc.css");
 
 /** If you don't want Windows-like context menus, remove this line */
