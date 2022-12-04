@@ -1,0 +1,263 @@
+/** downloads css */
+
+.downloadIconShow > .button-box > .button-icon {
+  list-style-image: url("./icons/browser/skin/panel-icon-folder.svg") !important;
+}
+
+#downloadsPanel
+{
+  --arrowpanel-dimmed: hsla(0,0%,80%,.35);
+}
+
+:root[lwt-popup-brighttext] #downloadsPanel
+{
+  --arrowpanel-dimmed: rgba(249,249,250,.1);
+}
+
+#downloadsPanel-mainView
+{
+  padding: 0 !important;
+}
+
+.downloadTypeIcon
+{
+  margin: 8px 13px;
+}
+
+#downloadsListBox
+{
+  margin: 0 !important;
+  background: transparent;
+  color: inherit;
+  -moz-appearance: none;
+}
+
+#downloadsSummary, #downloadsListBox > richlistitem
+{
+    height: 5.5em !important;
+    padding-inline: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    margin: 0 !important;
+}
+
+#downloadsListBox > richlistitem
+{
+  border-bottom: 1px solid var(--panel-separator-color);
+  background: transparent;
+  color: inherit;
+}
+
+#downloadsListBox > richlistitem:last-child
+{
+  border-bottom: none;
+}
+
+.downloadMainArea
+{
+  border-radius: 0 !important;
+  height: inherit;
+}
+
+.downloadButton
+{
+    -moz-appearance: none !important;
+    min-width: 58px !important;
+    height: inherit !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+}
+
+.downloadButton.downloadIconShow::before
+{
+  content: "";
+  margin: 10px 0;
+  border: 0;
+  min-width: 0;
+  border-inline-start: 1px solid var(--panel-separator-color);
+  -moz-appearance: none;
+}
+
+.downloadMainArea:hover, .downloadButton:hover
+{
+  background: var(--arrowpanel-dimmed) !important;
+}
+
+.downloadMainArea:hover + .downloadButton.downloadIconShow::before,
+.downloadButton.downloadIconShow:hover::before
+{
+  visibility: hidden;
+}
+
+#downloadsFooterButtons > toolbarseparator
+{
+  display: none !important;
+}
+
+#downloadsFooterButtons
+{
+    background-color: var(--arrowpanel-dimmed) !important;
+}
+
+#downloadsHistory
+{
+  display: -moz-inline-box !important;
+  -moz-appearance: none;
+  border-top: 1px solid var(--panel-separator-color) !important;
+  color: inherit !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0.9em 14px !important;
+}
+
+#downloadsHistory:not([disabled]):hover
+{
+  background: var(--arrowpanel-dimmed) !important;
+}
+
+/**
+ * ICON!
+ *
+ * This is one of the most complicated parts of the entire project lol
+ */
+#downloads-button[progress] > .toolbarbutton-badge-stack > #downloads-indicator-anchor > #downloads-indicator-icon, 
+#downloads-button[animate][notification] > .toolbarbutton-badge-stack > #downloads-indicator-anchor > #downloads-indicator-icon
+{
+  visibility: visible !important;
+}
+
+#downloads-indicator-anchor {
+  -moz-context-properties: fill, fill-opacity;
+  list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow-with-bar") !important;
+}
+
+#downloads-button[progress] > .toolbarbutton-badge-stack > #downloads-indicator-anchor
+{
+  list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow") !important;
+}
+
+#downloads-button[progress] > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer
+{
+  background: url("./icons/browser/skin/downloads/download-icons.svg#progress-bar-bg") center no-repeat !important;
+}
+
+#downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer
+{
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+
+#downloads-button[progress] > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer
+{
+  visibility: visible;
+}
+
+#downloads-button #downloads-indicator-start-image
+{
+  display: none;
+}
+
+#downloads-button[notification="start"] > .toolbarbutton-badge-stack #downloads-indicator-icon {
+  animation-name: downloadsIndicatorStartDip;
+  animation-duration: 360ms;
+  animation-delay: 400ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes downloadsIndicatorStartDip {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: linear;
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  88% {
+    transform: translateY(3px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes downloadsIndicatorFinishPulse
+{
+  from  { transform: scale(1); }
+  37.5% { transform: scale(1.4); animation-timing-function: ease-out; }
+  to    { transform: scale(1); animation-timing-function: ease-in; }
+}
+
+#downloads-indicator-finish-box,
+#downloads-button > .toolbarbutton-badge-stack > .toolbarbutton-animatable-box
+{
+  top: 6px;
+  left: 6px;
+}
+
+#downloads-indicator-finish-image
+{
+  transform: none;
+  list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#arrow") !important;
+  width: 16px;
+  height: 16px;
+}
+
+#downloads-button[animate][notification="finish"] #downloads-indicator-anchor
+{
+  list-style-image: url("./icons/browser/skin/downloads/download-icons.svg#default-bar") !important;
+}
+
+#downloads-button[animate][notification="finish"] > .toolbarbutton-badge-stack > #downloads-indicator-finish-box > #downloads-indicator-finish-image
+{
+  visibility: visible;
+  transform: scale(1);
+  animation-name: downloadsIndicatorFinishPulse !important;
+  animation-delay: 250ms !important;
+  animation-duration: 300ms !important;
+  animation-iteration-count: 2 !important;
+}
+
+#downloads-indicator-progress-inner {
+  background: url("./icons/browser/skin/downloads/download-icons.svg#progress-bar-fg") left no-repeat !important;
+  margin-inline-end: 16px;
+  -moz-context-properties: fill;
+  fill: var(--toolbarbutton-icon-fill-attention);
+  background-size: 16px !important;
+  /* From javascript side we use animation delay from 0s to -100s to show
+   * corresponding frames needed for progress.
+   * animation-delay is set to a positive value to make nothing shown.
+   */
+  animation-play-state: paused;
+  animation-delay: 1s;
+  animation-duration: 101s;
+  animation-timing-function: linear;
+  animation-name: indicatorArrowProgress;
+  border-radius: 0 !important;
+  width: 16px;
+  height: inherit;
+}
+
+#downloads-indicator-progress-inner:-moz-locale-dir(rtl) {
+  background-position-x: right;
+}
+
+@keyframes indicatorArrowProgress {
+  0% {
+    margin-inline-end: 16px;
+  }
+  100% {
+    margin-inline-end: 1px;
+  }
+}
+
+/** Rest of these are defined with the percent hack. */
+#downloads-button[progress][style*="100"] #downloads-indicator-progress-inner
+{
+  margin-inline-end: 0 !important;
+}
