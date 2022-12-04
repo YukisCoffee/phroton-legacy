@@ -93,6 +93,18 @@
 #identity-box[pageproxystate="valid"].verifiedDomain #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
     list-style-image: url(./icons/browser/skin/connection-secure.svg) !important;
 }
+#add-ons-button {
+    list-style-image: url(./icons/mozapps/skin/extensions/extension.svg) !important;
+}
+#preferences-button {
+    list-style-image: url(./icons/global/skin/icons/settings.svg) !important;
+}
+#zoom-in-button {
+    list-style-image: url(./icons/browser/skin/zoom-in.svg) !important;
+}
+#zoom-out-button {
+    list-style-image: url(./icons/browser/skin/zoom-out.svg) !important;
+}
 #identity-icon {
     margin-inline-start: 0;
     list-style-image: url(./icons/browser/skin/identity-icon.svg) !important;
