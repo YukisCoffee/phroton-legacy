@@ -178,7 +178,7 @@ tabs .tabbrowser-tab[pinned] .tab-icon-stack,
 .tabbrowser-tab[pinned][visuallyselected]:not([busy]) .tab-icon-stack
 {
   width: 100% !important;
-  position: relative !important;
+  position: static !important;
 }
 
 /** Scale should be 12px padding not compact, 9px compact */
@@ -199,4 +199,12 @@ tabs .tabbrowser-tab[pinned] .tab-icon-stack,
 
 .tab-throbber {
   height: inherit!important; /* this seems to fix positioning issues, at what cost? */
+}
+
+/* Fix breaking changes (Firefox 108) */
+#tabbrowser-tabs
+{
+	border-inline-start: 0 !important;
+	padding-inline-start: 0 !important;
+	margin-inline-start: 0 !important;
 }
