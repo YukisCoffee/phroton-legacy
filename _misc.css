@@ -25,3 +25,27 @@
 {
    display: none !important;
 }
+
+/*
+ * Firefox 108+ (sometimes) have a new private browsing indicator, which
+ * is longer and uglier.
+ *
+ * The old one still exists, but I just opted for styling the new one to
+ * look like the old one, which will probably last longer.
+ */
+#private-browsing-indicator-with-label
+{
+   margin-inline: 12px;
+   background-repeat: no-repeat;
+   background-size: 100% auto;
+   background-position: center;
+   width: 24px;
+   position: relative;
+   z-index: 1;
+   background-image: url("./icons/browser/skin/private-browsing.svg") !important;
+}
+
+#private-browsing-indicator-with-label > *
+{
+   display: none;
+}
