@@ -1,5 +1,19 @@
+# Phroton
+
+Make Proton look like Photon.
+
+This is a userChrome.css file that will restore the old Firefox UI on newer versions.
+
+![Screenshot](screenshot/0.png)
+
+# Prerequisites
+
 In order for icons to display properly, you must enable `svg.context-properties.content.enabled`
 in about:config. (This is the case on FF91, but it doesn't seem to be so true around FF102)
+
+# Extras
+
+Since Firefox 106, private browsing may be separated into multiple windows. If you desire the old behaviour, disable `browser.privateWindowSeparation.enabled`.
 
 # Known issues
 
