@@ -3,11 +3,11 @@
  */
 #unified-extensions-button
 {
-    list-style-image: url(./icons/extensionGeneric-16.svg);
+    list-style-image: url(./icons/extensionGeneric-16.svg) !important;
 }
 
 
 .unified-extensions-item-menu-button.subviewbutton
 {
-    list-style-image: url(./icons/global/skin/icons/settings.svg);
+    list-style-image: url(./icons/global/skin/icons/settings.svg) !important;
 }
