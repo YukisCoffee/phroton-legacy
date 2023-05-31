@@ -177,3 +177,64 @@ toolbarbutton.bookmark-item {
 .downloadIconShow > .button-box > .button-icon {
     list-style-image: url("./icons/browser/skin/panel-icon-folder.svg") !important;
 }
+/* Green */
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon {
+    fill: #12bc00 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
+    fill: #30e60b !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+#identity-box[pageproxystate="valid"].verifiedIdentity #identity-icon {
+    fill: #058b00 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+#identity-popup[connection^="secure"] .identity-popup-security-connection {
+    fill: #12bc00 !important;
+}
+
+/* Red */
+#identity-box[pageproxystate="valid"].notSecure #identity-icon {
+    fill: #de0000 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+#identity-box[pageproxystate="valid"].mixedActiveContent #identity-icon {
+    fill: #ff0039 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+#identity-box[pageproxystate="valid"].insecureLoginForms #identity-icon {
+    fill: #ff0039 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+.identity-popup-security-connection {
+    fill: #de0000;
+}
+
+/* Orange */
+#identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon {
+    fill: #ff9900 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+#identity-popup[mixedcontent~="passive-loaded"][isbroken] .identity-popup-security-connection {
+    fill: #ff9900 !important;
+}
+
+/* Yellow */
+#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon {
+    fill: #e6b000 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
+#identity-box[pageproxystate="valid"].certUserOverridden #identity-icon {
+    fill: #ffe900 !important;
+    fill-opacity: 1 !important;
+    transition: 100ms linear !important;
+}
