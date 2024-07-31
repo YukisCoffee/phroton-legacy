@@ -23,11 +23,14 @@
   --lwt-tab-line-color: var(--tab-loading-fill,  rgb(10, 132, 255)) !important;
 }
 /** New Tab Button Color*/
-#tabs-newtab-button, #TabsToolbar #new-tab-button {fill: white !important;}
+#tabs-newtab-button, #TabsToolbar #new-tab-button 
+{
+	fill: hsl(240,9%,98%) !important;
+}
 
 /** System Theme Titlebar*/
 .titlebar-color
 {
-color: white !important;
-background-color: #1F2340 !important;
+	color: hsl(240, 20%, 98%) !important;
+	background-color: hsl(235,33%,19%) !important;
 }

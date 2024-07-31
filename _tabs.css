@@ -119,7 +119,7 @@ tabs[closebuttons^="activetab"] tab:not([visuallyselected]) .tab-icon-stack {
 .close-icon {
   list-style-image: url(./icons/global/skin/icons/close2.svg) !important;
   color: inherit !important;
-  fill: currentColor;
+  fill: rgba(0, 0, 0, 0.7) !important;
   width: 20px !important;
   height: auto !important;
 }
