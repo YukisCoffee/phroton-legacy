@@ -1,4 +1,8 @@
-# Phroton
+# Deprecation notice
+
+This project will be superseded by a more complex Firefox theme of the same name by different developers. Therefore, this repository has been renamed to Phroton Legacy and archived.
+
+# Phroton Legacy
 
 Make Proton look like Photon.
 
